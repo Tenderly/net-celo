@@ -87,7 +87,7 @@ func (c *transfer) Run(input []byte, ctx *celoPrecompileContext) ([]byte, error)
 	var parsed bool
 	value, parsed := math.ParseBig256(hexutil.Encode(input[64:96]))
 	if !parsed {
-		return nil, fmt.Errorf("Error parsing transfer: unable to parse value from " + hexutil.Encode(input[64:96]))
+		return nil, fmt.Errorf("Error parsing transfer: unable to parse value from %s", hexutil.Encode(input[64:96]))
 	}
 	valueU256, overflow := uint256.FromBig(value)
 	if overflow {
