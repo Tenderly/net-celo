@@ -582,6 +582,9 @@ func (pool *LegacyPool) Pending(filter txpool.PendingFilter) map[common.Address]
 					GasTipCap: uint256.MustFromBig(txs[i].GasTipCap()),
 					Gas:       txs[i].Gas(),
 					BlobGas:   txs[i].BlobGas(),
+
+					// Celo specific
+					FeeCurrency: txs[i].FeeCurrency(),
 				}
 			}
 			pending[addr] = lazies
