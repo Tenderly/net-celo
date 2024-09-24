@@ -139,7 +139,10 @@ func CalcBaseFee(config *params.ChainConfig, parent *types.Header, time uint64) 
 	defer func() {
 		// If the base fee response is below the floor, intercept the return and return the floor instead.
 		if config.Celo != nil {
-			response = math.BigMax(response, new(big.Int).SetUint64(config.Celo.EIP1559BaseFeeFloor))
+			baseFeeFloor := new(big.Int).SetUint64(config.Celo.EIP1559BaseFeeFloor)
+			if response.Cmp(baseFeeFloor) < 0 {
+				response = baseFeeFloor
+			}
 		}
 	}()
 
