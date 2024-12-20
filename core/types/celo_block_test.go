@@ -77,17 +77,18 @@ func ToMockOldBeforeGingerbreadHeader(h *BeforeGingerbreadHeader) *mockOldBefore
 
 func BeforeGingerbreadHeaderToHeader(h *BeforeGingerbreadHeader) *Header {
 	return &Header{
-		ParentHash:  h.ParentHash,
-		Coinbase:    h.Coinbase,
-		Root:        h.Root,
-		TxHash:      h.TxHash,
-		ReceiptHash: h.ReceiptHash,
-		Bloom:       h.Bloom,
-		Number:      h.Number,
-		GasUsed:     h.GasUsed,
-		Time:        h.Time,
-		Extra:       h.Extra,
-		Difficulty:  new(big.Int),
+		ParentHash:     h.ParentHash,
+		Coinbase:       h.Coinbase,
+		Root:           h.Root,
+		TxHash:         h.TxHash,
+		ReceiptHash:    h.ReceiptHash,
+		Bloom:          h.Bloom,
+		Number:         h.Number,
+		GasUsed:        h.GasUsed,
+		Time:           h.Time,
+		Extra:          h.Extra,
+		Difficulty:     new(big.Int),
+		preGingerbread: true,
 	}
 }
 
@@ -110,8 +111,6 @@ func TestRLPDecodeHeaderCompatibility(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		test := test
-
 		t.Run(test.name, func(t *testing.T) {
 			t.Parallel()
 
@@ -150,8 +149,6 @@ func TestRlpEncodeHeaderCompatibility(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		test := test
-
 		t.Run(test.name, func(t *testing.T) {
 			t.Parallel()
 
