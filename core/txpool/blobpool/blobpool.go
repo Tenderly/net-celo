@@ -326,8 +326,8 @@ type BlobPool struct {
 	lock sync.RWMutex // Mutex protecting the pool during reorg handling
 
 	// Celo specific
-	celoBackend  *contracts.CeloBackend // For fee currency balances & exchange rate calculation
-	currentRates common.ExchangeRates   // current exchange rates for fee currencies
+	celoBackend        *contracts.CeloBackend // For fee currency balances & exchange rate calculation
+	feeCurrencyContext common.FeeCurrencyContext
 }
 
 // New creates a new blob transaction pool to gather, sort and filter inbound
