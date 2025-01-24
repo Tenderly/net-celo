@@ -344,7 +344,7 @@ func New(config Config, chain BlockChain) *BlobPool {
 		lookup:         newLookup(),
 		index:          make(map[common.Address][]*blobTxMeta),
 		spent:          make(map[common.Address]*uint256.Int),
-		txValidationFn: txpool.ValidateTransaction,
+		txValidationFn: txpool.CeloValidateTransaction,
 	}
 }
 
@@ -1102,7 +1102,7 @@ func (p *BlobPool) validateTx(tx *types.Transaction) error {
 		MaxSize:   txMaxSize,
 		MinTip:    p.gasTip.ToBig(),
 	}
-	if err := p.txValidationFn(tx, p.head, p.signer, baseOpts); err != nil {
+	if err := p.txValidationFn(tx, p.head, p.signer, baseOpts, p.feeCurrencyContext); err != nil {
 		return err
 	}
 	// Ensure the transaction adheres to the stateful pool filters (nonce, balance)
