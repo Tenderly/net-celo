@@ -35,9 +35,8 @@ func TestMinerFillTransactionsOrdering(t *testing.T) {
 	t.Parallel()
 
 	var (
-		key1     = core.DevPrivateKey
-		address1 = core.DevAddr
-		key2     = core.DevPrivateKey2
+		key1 = core.DevPrivateKey
+		key2 = core.DevPrivateKey2
 
 		miner        = createCeloMiner(t)
 		signer       = types.LatestSigner(miner.chainConfig)
@@ -188,34 +187,12 @@ func TestMinerFillTransactionsOrdering(t *testing.T) {
 		t.Run(test.name, func(t *testing.T) {
 			txs := reorderTxs(txs, test.txIndices)
 
-			// Verify that transaction ordering depends only on nonce and gas price when all transactions in the TxPool are local
-			t.Run("all local transactions", func(t *testing.T) {
-				miner := createCeloMiner(t)
-
-				errs := miner.txpool.Add(txs, true, false)
-				requireNoErrors(t, errs)
-
-				res := miner.generateWork(&generateParams{
-					parentHash: parentHeader.Hash(),
-					timestamp:  parentHeader.Time + 1,
-					random:     common.HexToHash("0xcafebabe"),
-					noTxs:      false,
-					forceTime:  true,
-				}, false)
-				require.NoError(t, res.err)
-
-				require.Len(t, res.block.Transactions(), len(txs))
-				for index, tx := range res.block.Transactions() {
-					assert.Equal(t, tx.Value(), big.NewInt(int64(index+1)))
-				}
-			})
-
-			// Verify that transaction ordering depends only on nonce and gas price when all transactions in the TxPool are remote
+			// Verify that transaction ordering depends only on nonce and gas price.
 			t.Run("all remote transactions", func(t *testing.T) {
 				miner := createCeloMiner(t)
 
 				miner.txpool.Clear()
-				errs := miner.txpool.Add(txs, false, false)
+				errs := miner.txpool.Add(txs, false)
 				requireNoErrors(t, errs)
 
 				res := miner.generateWork(&generateParams{
@@ -230,57 +207,6 @@ func TestMinerFillTransactionsOrdering(t *testing.T) {
 				require.Len(t, res.block.Transactions(), len(txs))
 				for index, tx := range res.block.Transactions() {
 					assert.Equal(t, tx.Value(), big.NewInt(int64(index+1)))
-				}
-			})
-
-			// verify that all transactions from Account1 are prioritized by adding them to the TxPool as local transactions,
-			// while transactions from Account2 are added as remote transactions
-			t.Run("mixed local & remote transactions", func(t *testing.T) {
-				miner := createCeloMiner(t)
-
-				var acc1TxNum, acc2TxNum uint64
-
-				miner.txpool.Clear()
-				// Add all transactions from account1 as local, and those from account2 as remote
-				for _, tx := range txs {
-					sender, err := types.Sender(signer, tx)
-					require.NoError(t, err)
-
-					isAccount1 := sender == address1
-					errs := miner.txpool.Add([]*types.Transaction{tx}, isAccount1, false)
-					requireNoErrors(t, errs)
-
-					if isAccount1 {
-						acc1TxNum++
-					} else {
-						acc2TxNum++
-					}
-				}
-
-				res := miner.generateWork(&generateParams{
-					parentHash: parentHeader.Hash(),
-					timestamp:  parentHeader.Time + 1,
-					random:     common.HexToHash("0xcafebabe"),
-					noTxs:      false,
-					forceTime:  true,
-				}, false)
-				require.NoError(t, res.err)
-
-				var acc1TxCount, acc2TxCount uint64
-
-				require.Len(t, res.block.Transactions(), len(txs))
-				for _, tx := range res.block.Transactions() {
-					sender, _ := types.Sender(signer, tx)
-
-					if sender == address1 {
-						assert.Equal(t, acc1TxCount, tx.Nonce())
-						assert.Zero(t, acc2TxCount, "transactions from Account2 should not be ordered before transactions from Account1")
-						acc1TxCount++
-					} else {
-						assert.Equal(t, acc2TxCount, tx.Nonce())
-						assert.Equal(t, acc1TxNum, acc1TxCount, "transactions from Account1 should not be ordered after transactions from Account2")
-						acc2TxCount++
-					}
 				}
 			})
 		})
