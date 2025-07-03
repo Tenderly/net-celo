@@ -21,9 +21,9 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/params/forks"
+	"github.com/tenderly/net-celo/core/types"
+	"github.com/tenderly/net-celo/params"
+	"github.com/tenderly/net-celo/params/forks"
 )
 
 var (

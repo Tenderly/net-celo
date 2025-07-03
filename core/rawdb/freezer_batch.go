@@ -21,8 +21,8 @@ import (
 	"math"
 	"time"
 
-	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/golang/snappy"
+	"github.com/tenderly/net-celo/rlp"
 )
 
 // This is the maximum amount of data that will be buffered in memory
