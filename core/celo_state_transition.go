@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/exchange"
-	"github.com/ethereum/go-ethereum/contracts"
-	"github.com/ethereum/go-ethereum/core/tracing"
-	"github.com/ethereum/go-ethereum/log"
 	"github.com/holiman/uint256"
+	"github.com/tenderly/net-celo/common"
+	"github.com/tenderly/net-celo/common/exchange"
+	"github.com/tenderly/net-celo/contracts"
+	"github.com/tenderly/net-celo/core/tracing"
+	"github.com/tenderly/net-celo/log"
 )
 
 // canPayFee checks whether accountOwner's balance can cover transaction fee.
