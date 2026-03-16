@@ -29,8 +29,8 @@ import (
 	"text/template"
 	"unicode"
 
-	"github.com/ethereum/go-ethereum/accounts/abi"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/tenderly/net-celo/accounts/abi"
+	"github.com/tenderly/net-celo/log"
 )
 
 var (

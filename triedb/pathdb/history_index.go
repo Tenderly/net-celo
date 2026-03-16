@@ -22,8 +22,8 @@ import (
 	"math"
 	"sort"
 
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/ethdb"
+	"github.com/tenderly/net-celo/core/rawdb"
+	"github.com/tenderly/net-celo/ethdb"
 )
 
 // parseIndex parses the index data with the supplied byte stream. The index data

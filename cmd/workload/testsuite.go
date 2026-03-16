@@ -22,12 +22,12 @@ import (
 	"io/fs"
 	"os"
 
-	"github.com/ethereum/go-ethereum/core/history"
-	"github.com/ethereum/go-ethereum/internal/flags"
-	"github.com/ethereum/go-ethereum/internal/utesting"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/tenderly/net-celo/core/history"
+	"github.com/tenderly/net-celo/internal/flags"
+	"github.com/tenderly/net-celo/internal/utesting"
+	"github.com/tenderly/net-celo/log"
+	"github.com/tenderly/net-celo/params"
+	"github.com/tenderly/net-celo/rpc"
 	"github.com/urfave/cli/v2"
 )
 

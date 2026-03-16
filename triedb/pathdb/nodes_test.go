@@ -21,10 +21,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/trie/trienode"
+	"github.com/tenderly/net-celo/common"
+	"github.com/tenderly/net-celo/crypto"
+	"github.com/tenderly/net-celo/rlp"
+	"github.com/tenderly/net-celo/trie/trienode"
 )
 
 func TestNodeSetEncode(t *testing.T) {

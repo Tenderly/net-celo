@@ -17,8 +17,8 @@
 package vm
 
 import (
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/tracing"
+	"github.com/tenderly/net-celo/common"
+	"github.com/tenderly/net-celo/core/tracing"
 	"github.com/holiman/uint256"
 )
 

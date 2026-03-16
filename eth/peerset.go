@@ -23,9 +23,9 @@ import (
 	"slices"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/eth/protocols/eth"
-	"github.com/ethereum/go-ethereum/eth/protocols/snap"
-	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/tenderly/net-celo/eth/protocols/eth"
+	"github.com/tenderly/net-celo/eth/protocols/snap"
+	"github.com/tenderly/net-celo/p2p"
 )
 
 var (

@@ -23,8 +23,8 @@ import (
 	"iter"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/tenderly/net-celo/core/types"
+	"github.com/tenderly/net-celo/rlp"
 )
 
 // This is just a sanity limit for the size of a single receipt.

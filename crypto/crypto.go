@@ -30,9 +30,9 @@ import (
 	"os"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/tenderly/net-celo/common"
+	"github.com/tenderly/net-celo/common/math"
+	"github.com/tenderly/net-celo/rlp"
 	"golang.org/x/crypto/sha3"
 )
 

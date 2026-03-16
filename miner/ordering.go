@@ -20,10 +20,10 @@ import (
 	"container/heap"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/exchange"
-	"github.com/ethereum/go-ethereum/core/txpool"
-	"github.com/ethereum/go-ethereum/core/types"
+	"github.com/tenderly/net-celo/common"
+	"github.com/tenderly/net-celo/common/exchange"
+	"github.com/tenderly/net-celo/core/txpool"
+	"github.com/tenderly/net-celo/core/types"
 	"github.com/holiman/uint256"
 )
 

@@ -5,9 +5,9 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types/interoptypes"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/tenderly/net-celo/common"
+	"github.com/tenderly/net-celo/core/types/interoptypes"
+	"github.com/tenderly/net-celo/rpc"
 )
 
 type InteropClient struct {

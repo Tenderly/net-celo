@@ -20,12 +20,12 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/ethclient"
-	"github.com/ethereum/go-ethereum/ethclient/gethclient"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/tenderly/net-celo/common"
+	"github.com/tenderly/net-celo/common/hexutil"
+	"github.com/tenderly/net-celo/core/types"
+	"github.com/tenderly/net-celo/ethclient"
+	"github.com/tenderly/net-celo/ethclient/gethclient"
+	"github.com/tenderly/net-celo/rpc"
 	"github.com/urfave/cli/v2"
 )
 

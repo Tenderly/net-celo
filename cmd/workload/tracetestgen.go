@@ -26,12 +26,12 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/eth/tracers"
-	"github.com/ethereum/go-ethereum/eth/tracers/logger"
-	"github.com/ethereum/go-ethereum/internal/flags"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/tenderly/net-celo/common"
+	"github.com/tenderly/net-celo/crypto"
+	"github.com/tenderly/net-celo/eth/tracers"
+	"github.com/tenderly/net-celo/eth/tracers/logger"
+	"github.com/tenderly/net-celo/internal/flags"
+	"github.com/tenderly/net-celo/log"
 	"github.com/urfave/cli/v2"
 )
 

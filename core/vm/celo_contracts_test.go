@@ -4,10 +4,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/contracts/addresses"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/tenderly/net-celo/common"
+	"github.com/tenderly/net-celo/contracts/addresses"
+	"github.com/tenderly/net-celo/core/types"
+	"github.com/tenderly/net-celo/params"
 	"github.com/holiman/uint256"
 	"golang.org/x/crypto/sha3"
 )

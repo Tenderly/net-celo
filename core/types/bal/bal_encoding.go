@@ -26,14 +26,14 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/tenderly/net-celo/common"
+	"github.com/tenderly/net-celo/crypto"
+	"github.com/tenderly/net-celo/params"
+	"github.com/tenderly/net-celo/rlp"
 	"github.com/holiman/uint256"
 )
 
-//go:generate go run github.com/ethereum/go-ethereum/rlp/rlpgen -out bal_encoding_rlp_generated.go -type BlockAccessList -decoder
+//go:generate go run github.com/tenderly/net-celo/rlp/rlpgen -out bal_encoding_rlp_generated.go -type BlockAccessList -decoder
 
 // These are objects used as input for the access list encoding. They mirror
 // the spec format.

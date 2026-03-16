@@ -19,8 +19,8 @@ package history
 import (
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/tenderly/net-celo/common"
+	"github.com/tenderly/net-celo/params"
 )
 
 // HistoryMode configures history pruning.

@@ -9,7 +9,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/tenderly/net-celo/log"
 )
 
 type mockT struct {

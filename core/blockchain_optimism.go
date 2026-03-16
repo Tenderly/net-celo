@@ -1,8 +1,8 @@
 package core
 
 import (
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/metrics"
+	"github.com/tenderly/net-celo/core/types"
+	"github.com/tenderly/net-celo/metrics"
 )
 
 // OPStack additions

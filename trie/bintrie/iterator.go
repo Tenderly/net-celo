@@ -19,8 +19,8 @@ package bintrie
 import (
 	"errors"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/trie"
+	"github.com/tenderly/net-celo/common"
+	"github.com/tenderly/net-celo/trie"
 )
 
 var errIteratorEnd = errors.New("end of iteration")

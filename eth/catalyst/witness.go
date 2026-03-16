@@ -21,15 +21,15 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/ethereum/go-ethereum/beacon/engine"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/stateless"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/params/forks"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/tenderly/net-celo/beacon/engine"
+	"github.com/tenderly/net-celo/common"
+	"github.com/tenderly/net-celo/common/hexutil"
+	"github.com/tenderly/net-celo/core"
+	"github.com/tenderly/net-celo/core/stateless"
+	"github.com/tenderly/net-celo/core/vm"
+	"github.com/tenderly/net-celo/log"
+	"github.com/tenderly/net-celo/params/forks"
+	"github.com/tenderly/net-celo/rlp"
 )
 
 // ForkchoiceUpdatedWithWitnessV1 is analogous to ForkchoiceUpdatedV1, only it

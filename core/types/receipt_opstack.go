@@ -3,7 +3,7 @@ package types
 import (
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/tenderly/net-celo/params"
 )
 
 // deriveOPStackFields derives the OP Stack specific fields for each receipt.

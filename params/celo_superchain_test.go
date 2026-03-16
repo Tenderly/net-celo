@@ -3,7 +3,7 @@ package params
 import (
 	"testing"
 
-	"github.com/ethereum/go-ethereum/superchain"
+	"github.com/tenderly/net-celo/superchain"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
