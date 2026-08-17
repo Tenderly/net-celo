@@ -369,6 +369,15 @@ func (st *stateTransition) buyGas() error {
 			mgval.Add(mgval, blobFee)
 		}
 	}
+	// For fee-currency transactions, celo-reth (celo-kona) has no gasFeeCap-based
+	// balance check: it only requires the actual debit of gasLimit * effectiveGasPrice
+	// to succeed. Check against mgval (the effective fee) instead of the feeCap-based
+	// balanceCheck to match, otherwise canonical blocks produced by celo-reth can
+	// contain fee-currency transactions this check would reject. mgval <= balanceCheck,
+	// so blocks valid under the stricter op-geth-era check remain valid.
+	if st.msg.FeeCurrency != nil {
+		balanceCheck = mgval
+	}
 	if err := st.canPayFee(balanceCheck); err != nil {
 		return err
 	}
